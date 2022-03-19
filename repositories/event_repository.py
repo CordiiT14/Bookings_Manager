@@ -13,3 +13,4 @@ def save(event):
 def delete_all():
     sql = "DELETE FROM events"
     run_sql(sql)
+    return
