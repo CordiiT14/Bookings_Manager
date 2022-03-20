@@ -37,8 +37,10 @@ def select(id):
         event = Event(results['event_title'], results['date'], results['time'], results['event_type'], results['description'], results['id'])
     return event 
 
-def update(id):
-    pass
+def update(event):
+    sql = "UPDATE events SET (event_title, date, time, event_type, description) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [event.event_title, event.date, event.time, event.event_type, event.description, event.id]
+    run_sql(sql, values)
 
 def delete(id):
     pass

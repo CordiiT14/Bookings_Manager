@@ -25,6 +25,11 @@ event_repository.save(event_2)
 
 print(event_repository.select(event_2.id).__dict__)
 
+event_2.time = "19:30"
+
+event_repository.update(event_2)
+
+print(event_repository.select(event_2.id).__dict__)
 
 
 # CUSTOMER REPOSITORY TESTING
