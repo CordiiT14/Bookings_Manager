@@ -28,3 +28,5 @@ class TestCustomer(unittest.TestCase):
     def test_customer_id(self):
         self.assertEqual( None, self.customer_1.id)
         self.assertEqual(None, self.customer_2.id)
+
+    
