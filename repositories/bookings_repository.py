@@ -30,6 +30,22 @@ def select_all():
         bookings.append(booking)
     return bookings
 
+def customer(booking):
+    sql = "SELECT * FROM customers WHERE id = %s"
+    values = [booking.customer.id]
+    results = run_sql(sql, values)[0]
+    
+    customer = Customer(results['first_name'], results['last_name'], results['email'], results['notes'], results['id'])
+    return customer
+
+
+def event(booking):
+    sql ="SELECT * FROM events WHERE id = %s"
+    values = [booking.event.id]
+    results = run_sql(sql, values)[0]
+    event = Event(results['event_title'], results['date'], results['time'], results['event_type'], results['description'], results['id'])
+    return event
+
 def update(booking):
     sql = "UPDATE bookings SET (event_id, customer_id) = (%s, %s) WHERE id = %s"
     values = [booking.event.id, booking.customer.id, booking.id]

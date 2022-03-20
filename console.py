@@ -73,8 +73,10 @@ bookings_repository.save(booking_3)
 
 # bookings_repository.update(booking_1)
 
-bookings = bookings_repository.select_all()
+# bookings = bookings_repository.select_all()
 
-for booking in bookings:
-    print(booking.__dict__)
-    
+# for booking in bookings:
+#     print(booking.__dict__)
+
+# print(bookings_repository.customer(booking_1).__dict__)
+# print(bookings_repository.event(booking_1).__dict__)
