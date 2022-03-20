@@ -14,3 +14,15 @@ def delete_all():
     sql = "DELETE FROM events"
     run_sql(sql)
     return
+
+def select_all():
+    pass
+
+def select(id):
+    pass
+
+def update(id):
+    pass
+
+def delete(id):
+    pass

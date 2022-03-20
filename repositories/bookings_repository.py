@@ -14,3 +14,15 @@ def save(booking):
     results = run_sql(sql, values)
     booking.id = results[0]['id']
     return booking 
+
+def select_all():
+    pass
+
+def select(id):
+    pass
+
+def update(id):
+    pass
+
+def delete(id):
+    pass
