@@ -1,4 +1,5 @@
 from db.run_sql import run_sql
+from models.customer import Customer
 
 def save(customer):
     sql = "INSERT INTO customers (first_name, last_name, email, notes) VALUES (%s, %s, %s, %s) RETURNING id"
@@ -13,7 +14,16 @@ def delete_all():
     return 
 
 def select_all():
-    pass
+    customers = []
+
+    sql = "SELECT * FROM customers"
+    results = run_sql(sql)
+
+    for row in results:
+        customer = Customer(row['first_name'], row['last_name'], row['email'], row['notes'], row['id'])
+        customers.append(customer)
+    
+    return customers 
 
 def select(id):
     pass

@@ -12,19 +12,19 @@ customer_repository.delete_all()
 bookings_repository.delete_all()
 
 event_1 = Event("Loud Poets", "11 April 2022", "18:30", "Spoken Word", "Showcasing the top spoken word talent from Scotland and the UK! From laugh-out-loud funny, through the wonderfully surreal, to the thoughtful and emotional. Loud Poets continue to prove that Spoken Word has something for everyone.")
-
 event_repository.save(event_1)
 
-print(event_1.__dict__)
 
 customer_1 = Customer("Sabrina", "Morales", "s.morales@emails.uk", "Customer is a wheelchair user")
-
 customer_repository.save(customer_1)
+customer_2 = Customer("Robbie", "Johnstone", "r.m.johnstone@mail.com")
+customer_repository.save(customer_2)
 
-print(customer_1.__dict__)
+
 
 booking_1 = Booking(event_1, customer_1)
-
 bookings_repository.save(booking_1)
 
-print(booking_1.__dict__)
+customers = customer_repository.select_all()
+for customer in customers:
+    print(customer.__dict__)
