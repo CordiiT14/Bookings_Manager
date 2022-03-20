@@ -3,6 +3,7 @@ from models.booking import Booking
 from models.customer import Customer
 from models.event import Event
 
+
 def delete_all():
     sql = "DELETE FROM bookings"
     run_sql(sql)
@@ -19,7 +20,9 @@ def select(id):
     pass
 
 def update(booking):
-    pass
+    sql = "UPDATE bookings SET (event_id, customer_id) = (%s, %s) WHERE id = %s"
+    values = [booking.event.id, booking.customer.id, booking.id]
+    run_sql(sql, values)
 
 def delete(id):
     sql = "DELETE FROM bookings WHERE id = %s"
