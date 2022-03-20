@@ -12,6 +12,12 @@ class TestBooking(unittest.TestCase):
         
         self.booking_1 = Booking(self.event_1, self.customer_1)
 
+    def test_booking_id(self):
+        self.assertEqual( None, self.booking_1.id)
+
+
+    # testing booking.event attributes
+
     def test_event_name(self):
         self.assertEqual("Loud Poets", self.booking_1.event.event_title)
 
@@ -30,3 +36,25 @@ class TestBooking(unittest.TestCase):
 
     def test_event_id(self):
         self.assertEqual( None, self.booking_1.event.id)
+
+    #testing booking.customer attributes
+
+    def test_customer_first_name(self):
+        self.assertEqual("Ella", self.booking_1.customer.first_name)
+        
+    
+    def test_customer_last_name(self):
+        self.assertEqual("Bendall", self.booking_1.customer.last_name)
+        
+
+    def test_customer_email(self):
+        self.assertEqual("egbendall@mail.co.uk", self.booking_1.customer.email)
+    
+
+    def test_customer_notes_none(self):
+        self.assertEqual( None, self.booking_1.customer.notes)
+
+
+    def test_customer_id(self):
+        self.assertEqual( None, self.booking_1.customer.id)
+ 
