@@ -1,3 +1,4 @@
+from curses import REPORT_MOUSE_POSITION
 import pdb
 from models.event import Event
 from models.customer import Customer
@@ -18,17 +19,17 @@ event_repository.save(event_1)
 event_2 = Event("The Man in the Submarine", "8 April 2022", "19:00", "Theatre", "A new play from L20 director, producer and playwright Laila Noble that tells the story of a man in a submarine and the care surrounding him as his hold on the world begins to loosen.")
 event_repository.save(event_2)
 
-events = event_repository.select_all()
+# events = event_repository.select_all()
 
-for event in events:
-    print(event.__dict__)
+# for event in events:
+#     print(event.__dict__)
 
-event_repository.delete(event_2.id)
+# event_repository.delete(event_2.id)
 
-events = event_repository.select_all()
+# events = event_repository.select_all()
 
-for event in events:
-    print(event.__dict__)
+# for event in events:
+#     print(event.__dict__)
 
 # print(event_repository.select(event_2.id).__dict__)
 
@@ -58,7 +59,8 @@ customer_repository.save(customer_2)
 #     print(customer.__dict__)
 
 
+# TESTING OF BOOKING REPOSITORY FUNCTIONS
 booking_1 = Booking(event_1, customer_1)
 bookings_repository.save(booking_1)
 
-
+bookings_repository.delete(booking_1.id)
