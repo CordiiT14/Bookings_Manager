@@ -42,4 +42,6 @@ def update(customer):
     
 
 def delete(id):
-    pass
+    sql = "DELETE FROM customers WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
