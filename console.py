@@ -12,12 +12,40 @@ event_repository.delete_all()
 customer_repository.delete_all()
 bookings_repository.delete_all()
 
-# EVENT REPOSITORY TESTING
+# SEED DATA
 
 event_1 = Event("Loud Poets", "11 April 2022", "18:30", "Spoken Word", "Showcasing the top spoken word talent from Scotland and the UK! From laugh-out-loud funny, through the wonderfully surreal, to the thoughtful and emotional. Loud Poets continue to prove that Spoken Word has something for everyone.")
 event_repository.save(event_1)
 event_2 = Event("The Man in the Submarine", "8 April 2022", "19:00", "Theatre", "A new play from L20 director, producer and playwright Laila Noble that tells the story of a man in a submarine and the care surrounding him as his hold on the world begins to loosen.")
 event_repository.save(event_2)
+event_3 = Event("Guid Crack: Spring Rising", "25 March 2022", "19:30", "Storytelling", "Gather round the digital campfire with guest storyteller Claire Hewitt to share tales from the North that celebrate light, life and hope returning as the Spring Equinox approaches and bird song fills the air. Stories and songs that like the swallows and cranes, know of no borders. This evening will be dedicated to the people of Ukraine and their rich folklore traditions so please bring a candle to light together at the beginning.")
+event_repository.save(event_3)
+event_4 = Event("Scott Gibson: Rejoice", "26 May 2022", "20:00", "Comedy", "Scott Gibson (Edinburgh Award Winner, Scottish Variety Award Winner, Chortle Nominee), Glasgow’s critically-acclaimed and award-winning son, is touring once again with a brand new hour of darkly comedic storytelling.")
+event_repository.save(event_4)
+
+customer_1 = Customer("Sabrina", "Morales", "s.morales@emails.uk", "Customer is a wheelchair user")
+customer_repository.save(customer_1)
+customer_2 = Customer("Robbie", "Johnstone", "r.m.johnstone@mail.com")
+customer_repository.save(customer_2)
+customer_3 = Customer("Elle", "Macdonald", "macdonald.elle@hotmail.com")
+customer_repository.save(customer_3)
+customer_4 = Customer("Josef", "Nolan", "jo-no@mail.de", "Partially sighted likes to sit in the front row")
+customer_repository.save(customer_4)
+customer_5 = Customer("Hannah", "Finlay", "finlay69@mail.co.uk")
+customer_repository.save(customer_5)
+
+
+
+booking_1 = Booking(event_1, customer_1)
+bookings_repository.save(booking_1)
+booking_2 = Booking(event_1, customer_2)
+bookings_repository.save(booking_2)
+booking_3 = Booking(event_2, customer_1)
+bookings_repository.save(booking_3)
+
+
+
+# EVENT REPOSITORY TESTING
 
 # events = event_repository.select_all()
 
@@ -39,12 +67,7 @@ event_repository.save(event_2)
 
 # print(event_repository.select(event_2.id).__dict__)
 
-
 # CUSTOMER REPOSITORY TESTING
-customer_1 = Customer("Sabrina", "Morales", "s.morales@emails.uk", "Customer is a wheelchair user")
-customer_repository.save(customer_1)
-customer_2 = Customer("Robbie", "Johnstone", "r.m.johnstone@mail.com")
-customer_repository.save(customer_2)
 
 # print(customer_repository.select(customer_1.id).__dict__)
 # customer_1.notes = None
@@ -60,12 +83,6 @@ customer_repository.save(customer_2)
 
 
 # TESTING OF BOOKING REPOSITORY FUNCTIONS
-booking_1 = Booking(event_1, customer_1)
-bookings_repository.save(booking_1)
-booking_2 = Booking(event_1, customer_2)
-bookings_repository.save(booking_2)
-booking_3 = Booking(event_2, customer_1)
-bookings_repository.save(booking_3)
 
 # bookings_repository.delete(booking_1.id)
 
