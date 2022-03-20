@@ -43,4 +43,6 @@ def update(event):
     run_sql(sql, values)
 
 def delete(id):
-    pass
+    sql = "DELETE FROM events WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
