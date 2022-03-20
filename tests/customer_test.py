@@ -9,4 +9,4 @@ class TestCustomer(unittest.TestCase):
         
     def test_customer_first_name(self):
         self.assertEqual("Ella", self.customer_1.first_name)
-        self.asserEqual ("Robbie", self.customer_2.first_name)
+        self.assertEqual ("Robbie", self.customer_2.first_name)
