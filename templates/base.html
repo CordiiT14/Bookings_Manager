@@ -2,40 +2,52 @@
     <head>
         <meta charset="UTF-8">
         <title>{{ title }} - Bookings Manager</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     </head>
-    <header>
-        <h1>Bookings Manager</h1>
-    </header>
-    <div class="side-bar">
-        <nav>
-            <ul>
-                <li>
-                    <a href="/">Dashboard</a>
-                </li>
-                <li>
-                    <a href="/">View Customers</a>
-                </li>
-                <li>
-                    <a href="/">Create Customer</a>
-                </li>
-                <li>
-                    <a href="/">View Events</a>
-                </li>
-                <li>
-                    <a href="/">Create Event</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <div class="main-site-container">
+        <div class="side-bar">
+            <header>
+                <h1>Bookings Manager</h1>
+            </header>
+                <nav>
+                <ul>
+                    <li>
+                        <a href="/">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/">View Customers</a>
+                    </li>
+                    <li>
+                        <a href="/">Create Customer</a>
+                    </li>
+                    <li>
+                        <a href="/">View Events</a>
+                    </li>
+                    <li>
+                        <a href="/">Create Event</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="account">
+                <img href="{{ url_for('static', filename='images/accountlogo') }}">
+                <a href="/account">Account</a>
+            </div>
+        </div>
     <main>
-        {% block content %}
+        <div class="dashboard-container">
+            {% block content %}
 
-        {% endblock %}
+            {% endblock %}
+        </div>
     </main>
     <footer>
-        <p>Cordii.T Creative</p>
-        <div class="sitemap">
-            <a href="/sitemap" target="_blank">Sitemap</a>
+        <div class="footer-container">
+            <p>Cordii.T Creative</p>
+            <div class="sitemap">
+                <a href="/sitemap" target="_blank">Sitemap</a>
+            </div>
         </div>
     </footer>
+    </div>
 </html>
