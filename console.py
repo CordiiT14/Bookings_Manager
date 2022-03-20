@@ -25,6 +25,8 @@ customer_repository.save(customer_2)
 booking_1 = Booking(event_1, customer_1)
 bookings_repository.save(booking_1)
 
-customers = customer_repository.select_all()
-for customer in customers:
-    print(customer.__dict__)
+# customers = customer_repository.select_all()
+# for customer in customers:
+#     print(customer.__dict__)
+
+print(customer_repository.select(customer_1.id).__dict__)

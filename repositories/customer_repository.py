@@ -26,7 +26,14 @@ def select_all():
     return customers 
 
 def select(id):
-    pass
+    sql = "SELECT * FROM customers WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)[0]
+
+    if results is not None:
+        customer = Customer(results['first_name'], results['last_name'], results['email'],results['notes'], id)
+    return customer
+
 
 def update(id):
     pass
