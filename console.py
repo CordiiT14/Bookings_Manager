@@ -62,9 +62,19 @@ customer_repository.save(customer_2)
 # TESTING OF BOOKING REPOSITORY FUNCTIONS
 booking_1 = Booking(event_1, customer_1)
 bookings_repository.save(booking_1)
+booking_2 = Booking(event_1, customer_2)
+bookings_repository.save(booking_2)
+booking_3 = Booking(event_2, customer_1)
+bookings_repository.save(booking_3)
 
 # bookings_repository.delete(booking_1.id)
 
-booking_1.customer = customer_2
+# booking_1.customer = customer_2
 
-bookings_repository.update(booking_1)
+# bookings_repository.update(booking_1)
+
+bookings = bookings_repository.select_all()
+
+for booking in bookings:
+    print(booking.__dict__)
+    

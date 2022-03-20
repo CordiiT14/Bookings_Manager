@@ -3,6 +3,8 @@ from models.booking import Booking
 from models.customer import Customer
 from models.event import Event
 
+import repositories.event_repository as event_repository
+import repositories.customer_repository as customer_repository
 
 def delete_all():
     sql = "DELETE FROM bookings"
@@ -16,8 +18,17 @@ def save(booking):
     booking.id = results[0]['id']
     return booking 
 
-def select(id):
-    pass
+def select_all():
+    bookings = []
+    sql = "SELECT * FROM bookings"
+    results = run_sql(sql)
+
+    for rows in results:
+        event = event_repository.select(rows['event_id'])
+        customer = customer_repository.select(rows['customer_id'])
+        booking = Booking(event, customer, rows['id'])
+        bookings.append(booking)
+    return bookings
 
 def update(booking):
     sql = "UPDATE bookings SET (event_id, customer_id) = (%s, %s) WHERE id = %s"
