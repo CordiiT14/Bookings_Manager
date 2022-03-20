@@ -29,4 +29,5 @@ class TestCustomer(unittest.TestCase):
         self.assertEqual( None, self.customer_1.id)
         self.assertEqual(None, self.customer_2.id)
 
-    
+    def test_full_name_method(self):
+        self.assertEqual("Robbie Johnstone", self.customer_2.full_name(self.customer_2))

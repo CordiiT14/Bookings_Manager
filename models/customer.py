@@ -7,4 +7,6 @@ class Customer:
         self.notes = notes
         self.id = id
 
-        
+    def full_name(self, customer):
+        full_name = f"{customer.first_name} {customer.last_name}"
+        return full_name
