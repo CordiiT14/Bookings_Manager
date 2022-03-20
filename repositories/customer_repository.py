@@ -35,8 +35,11 @@ def select(id):
     return customer
 
 
-def update(id):
-    pass
+def update(customer):
+    sql = "UPDATE customers SET (first_name, last_name, email, notes) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [customer.first_name, customer.last_name, customer.email, customer.notes, customer.id]
+    run_sql(sql, values)
+    
 
 def delete(id):
     pass

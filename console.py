@@ -30,3 +30,7 @@ bookings_repository.save(booking_1)
 #     print(customer.__dict__)
 
 print(customer_repository.select(customer_1.id).__dict__)
+customer_1.notes = None
+
+customer_repository.update(customer_1)
+print(customer_1.__dict__)
