@@ -6,4 +6,4 @@ from models.event import Event
 class TestBooking(unittest.TestCase):
 
     def setUp(self):
-        
+        pass
