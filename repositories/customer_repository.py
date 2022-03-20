@@ -26,6 +26,8 @@ def select_all():
     return customers 
 
 def select(id):
+    customer = None
+
     sql = "SELECT * FROM customers WHERE id = %s"
     values = [id]
     results = run_sql(sql, values)[0]

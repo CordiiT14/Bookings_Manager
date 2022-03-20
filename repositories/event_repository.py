@@ -27,7 +27,15 @@ def select_all():
     return events
 
 def select(id):
-    pass
+    event = None
+
+    sql = "SELECT * FROM events WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)[0]
+
+    if results is not None:
+        event = Event(results['event_title'], results['date'], results['time'], results['event_type'], results['description'], results['id'])
+    return event 
 
 def update(id):
     pass
