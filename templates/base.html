@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ title }} - Bookings Manager</title>
+    </head>
+    <header>
+        <h1>Bookings Manager</h1>
+    </header>
+    <div class="side-bar">
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Dashboard</a>
+                </li>
+                <li>
+                    <a href="/">View Customers</a>
+                </li>
+                <li>
+                    <a href="/">Create Customer</a>
+                </li>
+                <li>
+                    <a href="/">View Events</a>
+                </li>
+                <li>
+                    <a href="/">Create Event</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    <footer>
+        <p>Cordii.T Creative</p>
+        <div class="sitemap">
+            <a href="/sitemap" target="_blank">Sitemap</a>
+        </div>
+    </footer>
+</html>
