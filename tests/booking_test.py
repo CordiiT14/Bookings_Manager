@@ -58,3 +58,5 @@ class TestBooking(unittest.TestCase):
     def test_customer_id(self):
         self.assertEqual( None, self.booking_1.customer.id)
  
+    def test_full_name_method(self):
+        self.assertEqual("Ella Bendall", self.booking_1.customer.full_name(self.booking_1.customer))
