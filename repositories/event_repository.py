@@ -16,7 +16,15 @@ def delete_all():
     return
 
 def select_all():
-    pass
+    events = []
+
+    sql = "SELECT * FROM events"
+    results = run_sql(sql)
+
+    for row in results:
+        event = Event(row['event_title'], row['date'], row['time'], row['event_type'], row['description'], row ['id'] )
+        events.append(event)
+    return events
 
 def select(id):
     pass
