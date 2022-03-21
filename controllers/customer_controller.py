@@ -12,7 +12,18 @@ def view_all_customer():
 
 @customers_blueprint.route('/customers/new')
 def new_customer():
-    pass
+    return render_template('customers/new.html', title='Add New Customer')
+
+@customers_blueprint.route('/customers/new', methods=['POST'])
+def add_new_customer():
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    email = request.form['email']
+    notes = request.form['notes']
+    customer = Customer(first_name, last_name, email, notes)
+    customer = customer_repository.save(customer)
+    id = customer.id
+    return redirect('/customers/id')
 
 @customers_blueprint.route('/customers/<id>')
 def view_customer_details(id):
@@ -21,4 +32,5 @@ def view_customer_details(id):
 
 @customers_blueprint.route('/customers/edit')
 def edit_customer():
-    pass
+
+    return render_template('/customers/edit.html', title= 'Update Details')

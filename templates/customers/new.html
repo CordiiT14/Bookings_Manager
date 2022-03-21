@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% block content%}
+
+<div>
+    <form action="/customers/new" method="post">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" value="First Name">
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" value="Last Name">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="Email">
+        <label for="notes">Customer Notes:</label>
+        <input type="text" id="notes" name="notes" value="Add any customer relevant notes here.">
+        <input type="submit" value="submit">
+        
+    </form>
+</div>
+
+{% endblock %}
