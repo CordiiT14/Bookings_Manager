@@ -30,6 +30,18 @@ def view_event_details(id):
     event = event_repository.select(id)
     return render_template('/events/view.html', title=event.event_title, event = event)
 
-@events_blueprint.route('/events/edit')
-def edit_event():
-    pass
+@events_blueprint.route('/events/<id>/edit')
+def edit_event(id):
+    event = event_repository.select(id)
+    return render_template('/events/edit.html', title = "Edit Event", event = event)
+
+@events_blueprint.route('/events/<id>/edit', methods=['POST'])
+def update_event(id):
+    event_title = request.form['event_title']
+    date = request.form['date']
+    time = request.form['time']
+    event_type = request.form['event_type']
+    description = request.form['description']
+    event = Event(event_title, date, time, event_type, description, id)
+    event_repository.update(event)
+    return render_template('/events/view.html', title = event.event_title, event = event)
