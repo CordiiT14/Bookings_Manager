@@ -29,10 +29,10 @@ def view_customer_details(id):
     customer = customer_repository.select(id)
     return render_template('/customers/view.html', title = customer.full_name(customer), customer = customer)
 
-@customers_blueprint.route('/customers/<id>/edit')
+@customers_blueprint.route('/customers/<id>/edit', methods=['GET'])
 def edit_customer():
-
-    return render_template('/customers/edit.html', title= 'Update Details')
+    customer = customer_repository.select(id)
+    return render_template('/customers/edit.html', title= 'Update Details', customer = customer)
 
 @customers_blueprint.route('/customers/<id>/delete')
 def confirm_delete_customer(id):

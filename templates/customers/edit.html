@@ -1,5 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div>
+    <form action="/customers/{{customer.id}}" method="post">
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" value="{{ customer.first_name }}"" required>
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" value="{{customer.last_name}}" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{customer.email}}" required>
+        <label for="notes">Customer Notes:</label>
+        <input type="text" id="notes" name="notes" value="{{customer.notes}}">
+        <input type="submit" value="submit">
+        
+    </form>
+</div>
 
 {% endblock %}
