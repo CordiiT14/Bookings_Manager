@@ -13,25 +13,48 @@
 
 header {
     padding: 15px;
+    color: #F1E3D3;
 }
 
 .side-bar li {
     list-style: none;
-    padding: 5px;
+    padding-top: 15px;
+
+}
+
+.side-bar a {
+    text-decoration: none;
+    color: #F1E3D3;
+}
+
+.side-bar a:hover {
+    color: #8E7DBE;
+    text-shadow: #D88C9A;
 }
 
 .account {
     margin: 10px;
     padding: 5px;
     position: fixed;
-    bottom: 0;
-    
+    bottom: 2 ;
+    background-color: #8E7DBE;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.account img {
+    padding-right: 5px;
+}
+
+.account a {
+    text-decoration: none;
+    color: black;
 }
 
 .dashboard-container {
     background-color: #F1E3D3;
     margin-left: 200px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     width: 100%;
     min-height: 100%;
     padding: 15px;
@@ -47,10 +70,12 @@ body {
     background-color: #99C1B9;
     bottom: 0;
     width: 100%;
+    padding: 10px;
 }
 
 footer {
     text-align: center;
+
 } 
 
 
@@ -78,16 +103,32 @@ footer {
     padding: 5px;
     margin: 10px;
     max-height: 400px;
+    width: 300px
 } 
 
+.event-card h3 {
+    flex: wrap;
+}
+
 .event-description {
-    max-width: 300px;
+    display:block;
     max-height: 200px;
     overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.event-details {
+    background-color: #D88C9A ;
+    color: white;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 5px;
+    display: inline;
 }
 
 .event-button {
-    background-color: D88C9A;
+    background-color: #D88C9A;
     border-radius: 5px;
     margin: 5px;
     padding: 10px;
@@ -99,4 +140,10 @@ footer {
 .event-button a {
     text-decoration: none;
     color: white;
+}
+
+.event-button a:hover {
+    color: #8E7DBE;
+    text-shadow: #F1E3D3;
+    font-size: large;
 }
