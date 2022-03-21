@@ -22,8 +22,7 @@ def add_new_customer():
     notes = request.form['notes']
     customer = Customer(first_name, last_name, email, notes)
     customer = customer_repository.save(customer)
-    id = customer.id
-    return redirect('/customers/id')
+    return redirect('/customers')
 
 @customers_blueprint.route('/customers/<id>')
 def view_customer_details(id):
