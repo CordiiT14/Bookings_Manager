@@ -30,9 +30,19 @@ def view_customer_details(id):
     return render_template('/customers/view.html', title = customer.full_name(customer), customer = customer)
 
 @customers_blueprint.route('/customers/<id>/edit', methods=['GET'])
-def edit_customer():
+def edit_customer(id):
     customer = customer_repository.select(id)
     return render_template('/customers/edit.html', title= 'Update Details', customer = customer)
+
+@customers_blueprint.route('/customers/<id>', methods=['POST'])
+def update_customer(id):
+    first_name = request.form['first_name']
+    last_name = request.form['last_name']
+    email = request.form['email']
+    notes = request.form['notes']
+    customer = Customer(first_name, last_name, email, notes, id)
+    customer_repository.update(customer)
+    return render_template('/customers/view.html', title=customer.full_name(customer), customer = customer )
 
 @customers_blueprint.route('/customers/<id>/delete')
 def confirm_delete_customer(id):
