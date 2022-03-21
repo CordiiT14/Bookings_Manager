@@ -67,6 +67,12 @@ bookings_repository.save(booking_3)
 
 # print(event_repository.select(event_2.id).__dict__)
 
+customer_list = event_repository.customers_list_for_event(event_1.id)
+
+for customer in customer_list:
+    print(customer.full_name(customer))
+    print(customer.notes)
+
 # CUSTOMER REPOSITORY TESTING
 
 # print(customer_repository.select(customer_1.id).__dict__)

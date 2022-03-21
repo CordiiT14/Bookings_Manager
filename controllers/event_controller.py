@@ -28,6 +28,7 @@ def add_new_event():
 @events_blueprint.route('/events/<id>')
 def view_event_details(id):
     event = event_repository.select(id)
+    bookings = 
     return render_template('/events/view.html', title=event.event_title, event = event)
 
 @events_blueprint.route('/events/<id>/edit')
