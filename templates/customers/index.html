@@ -18,7 +18,7 @@
                         <td>{{ customer.full_name(customer) }}</td>
                         <td>{{ customer.email }}</td>
                         <td><a href="/customers/{{ customer.id }}">Go to Customer</a>
-                        <a href="/customerd/delete">Delete customer</a>
+                        <a href="/customers/{{customer.id}}/delete">Delete customer</a>
                     </td>
                     </tr>
                 {% endfor %}

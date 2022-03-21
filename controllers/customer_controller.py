@@ -29,7 +29,21 @@ def view_customer_details(id):
     customer = customer_repository.select(id)
     return render_template('/customers/view.html', title = customer.full_name(customer), customer = customer)
 
-@customers_blueprint.route('/customers/edit')
+@customers_blueprint.route('/customers/<id>/edit')
 def edit_customer():
 
     return render_template('/customers/edit.html', title= 'Update Details')
+
+@customers_blueprint.route('/customers/<id>/delete')
+def confirm_delete_customer(id):
+    customer = customer_repository.select(id)
+    return render_template('/customers/delete.html', title = "Delete Customer", customer = customer)
+
+@customers_blueprint.route('/customers/<id>/delete', methods=['POST'])
+def delete_customer(id):
+    customer = customer_repository.select(id)
+    if customer.last_name == request.form['confirm_delete']:
+        customer_repository.delete(id)
+        return redirect('/customers')
+    else:
+        redirect('/customer/<id>/delete')
