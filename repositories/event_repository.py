@@ -58,4 +58,5 @@ def customers_list_for_event(id):
     for row in results:
         customer = Customer(row['first_name'], row['last_name'], row['email'], row['notes'], row['id'])
         customers.append(customer)
+        
     return customers

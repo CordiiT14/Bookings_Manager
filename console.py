@@ -72,6 +72,7 @@ customer_list = event_repository.customers_list_for_event(event_1.id)
 for customer in customer_list:
     print(customer.full_name(customer))
     print(customer.notes)
+    print(customer.id)
 
 # CUSTOMER REPOSITORY TESTING
 

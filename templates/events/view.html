@@ -21,17 +21,18 @@
     <table>
         <thead>
             <tr>
-                <th>Booking ID</th>
                 <th>Customer Name</th>
                 <th>Customer Notes</th>  
             </tr>
         </thead>
         <tbody>
+            {% for customer in all_bookings%}
             <tr>
-                <th></th>
-                <td></td>
-                <td></td>
+                <th>{{customer.full_name(customer)}}</th>
+                <td>{{customer.notes}}</td>
+                <td><a href="/customers/{{customer.id}}">View Customer</a></td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>
