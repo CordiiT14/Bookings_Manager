@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div>
+    <h2>First Name:</h2>
+        {{ customer.first_name}}
+    <h2>Last Name:</h2>
+        {{ customer.last_name}}
+    <h2>Email:</h2>
+        {{ customer.email }}
+    <h2>Notes:</h2>
+        <p>{{ customer.notes }}</p>
+
+    
+    <a class="button" href="/customer/edit">Update details</a>
+</div>
+list of bookings for customer will be added below
+<table>
+    <thead>
+        <tr>
+            <th>Event ID</th>
+            <th>Event Title</th>
+            <th>Event Date</th>
+            <th>Event Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td><a href="/event/event.id ">View Event</a></td>
+            </tr>
+        
+    </tbody>
+</table>
+
+
+{% endblock %}
