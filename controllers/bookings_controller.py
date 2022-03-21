@@ -1,4 +1,4 @@
-from flask import render_template, redirect, request
+from flask import render_template, redirect, request, url_for
 from flask import Blueprint
 from models.booking import Booking
 import repositories.bookings_repository as booking_repository
@@ -22,4 +22,4 @@ def add_booking():
     customer = customer_repository.select(customer_id)
     booking = Booking(event, customer)
     booking_repository.save(booking)
-    return redirect('/events/event_id')
+    return redirect(url_for('events.view_event_details', id = event_id))
