@@ -1,4 +1,36 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<div>
+    <h2>Event - {{event.event_title}}</h2>
+    <h3>Date:</h3>
+    {{event.date}}
+    <h3>Time:</h3>
+    {{event.time}}
+    <h3>Event Type:</h3>
+    {{event.event_type}}
+    <h3>Event Description:</h3>
+    {{event.description}}
+</div>
+<a class="button" href="/events/{{event.id}}/edit">Update details</a>
+<a class="button" href="/events/{{event.id}}/delete">Delete Event</a>
+<hr>
+<div>
+    customer list will go below:
+    <table>
+        <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>Customer Name</th>
+                <th>Customer Notes</th>  
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 {% endblock %}

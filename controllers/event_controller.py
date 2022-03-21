@@ -12,7 +12,7 @@ def view_all_events():
 
 @events_blueprint.route('/events/new')
 def new_events():
-    pass
+    return render_template('/events/new.html', title = 'Add Event')
 
 @events_blueprint.route('/events/<id>')
 def view_event_details(id):
