@@ -27,7 +27,8 @@ def add_new_customer():
 @customers_blueprint.route('/customers/<id>')
 def view_customer_details(id):
     customer = customer_repository.select(id)
-    return render_template('/customers/view.html', title = customer.full_name(customer), customer = customer)
+    bookings = customer_repository.list_booked_events(id)
+    return render_template('/customers/view.html', title = customer.full_name(customer), customer = customer, all_bookings = bookings)
 
 @customers_blueprint.route('/customers/<id>/edit', methods=['GET'])
 def edit_customer(id):

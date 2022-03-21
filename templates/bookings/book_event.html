@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% block content %}
+<div>
+    <p>Select from customers to book for {{event.event_title}} on {{event.date}} at {{event.time}}</p>
+    <form action="/bookings/{{event.id}}/new" method="post">
+        <label for="customer"> Select Customer</label>
+        <select id="customer" name="customer_id">
+            {% for customer in all_customers %}
+            <option value="{{customer.id}}">{{customer.full_name(customer)}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Book">
+    </form>
+</div>
+{% endblock %}

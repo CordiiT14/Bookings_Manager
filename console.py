@@ -88,11 +88,11 @@ bookings_repository.save(booking_3)
 # for customer in customers:
 #     print(customer.__dict__)
 
-events_list = customer_repository.list_booked_events(customer_1.id)
+# events_list = customer_repository.list_booked_events(customer_1.id)
 
-for events in events_list:
-    print(events.event_title)
-    print(events.id)
+# for events in events_list:
+#     print(events.event_title)
+#     print(events.id)
 
 
 # TESTING OF BOOKING REPOSITORY FUNCTIONS
