@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from models.customer import Customer
+from models.event import Event
 
 def save(customer):
     sql = "INSERT INTO customers (first_name, last_name, email, notes) VALUES (%s, %s, %s, %s) RETURNING id"
@@ -47,3 +48,15 @@ def delete(id):
     sql = "DELETE FROM customers WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def list_booked_events(id):
+    events = []
+
+    sql = "SELECT events.* FROM events INNER JOIN bookings ON bookings.event_id = events.id WHERE bookings.customer_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        event = Event(row['event_title'], row['date'], row['time'], row['event_type'], row['description'], row['id'])
+        events.append(event)
+    return events 
