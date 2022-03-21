@@ -14,6 +14,17 @@ def view_all_events():
 def new_events():
     return render_template('/events/new.html', title = 'Add Event')
 
+@events_blueprint.route('/events/new', methods=['POST'])
+def add_new_event():
+    event_title = request.form['event_title']
+    date = request.form['date']
+    time = request.form['time']
+    event_type = request.form['event_type']
+    description = request.form['description']
+    event = Event(event_title, date, time, event_type, description)
+    event = event_repository.save(event)
+    return render_template('events/view.html', title = event.event_title, event = event)
+
 @events_blueprint.route('/events/<id>')
 def view_event_details(id):
     event = event_repository.select(id)
