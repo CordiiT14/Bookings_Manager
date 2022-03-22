@@ -7,7 +7,7 @@ events_blueprint = Blueprint("events", __name__)
 
 @events_blueprint.route('/events')
 def view_all_events():
-    events = event_repository.select_all()
+    events = event_repository.select_all_active()
     return render_template('/events/index.html', title = 'All Events', all_events = events)
 
 @events_blueprint.route('/events/new')
