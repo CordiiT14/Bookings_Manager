@@ -74,6 +74,12 @@ bookings_repository.save(booking_3)
 #     print(customer.notes)
 #     print(customer.id)
 
+active = event_repository.select_all_active()
+
+for event in active:
+    print(event.__dict__)
+
+
 # CUSTOMER REPOSITORY TESTING
 
 # print(customer_repository.select(customer_1.id).__dict__)
