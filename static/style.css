@@ -83,6 +83,35 @@ footer {
     font-family: Montserrat, sans-serif;
 }
 
+form {
+    background: white;
+    border-radius: 5px;
+    min-height: 400px;
+    width: 400px;
+    padding: 20px;
+}
+
+form label {
+    display: block;
+    padding: 10px;
+}
+
+form input {
+    display: block;
+    padding: 10px;
+    margin-left: 15px;
+}
+
+form textarea {
+    margin-left: 15px;
+}
+
+form .button {
+    margin: 10px;
+    padding: 10px;
+    margin-left: 10px;
+}
+
 
 /* HOME/DASHBOARD STYLE */
 
@@ -177,6 +206,36 @@ footer {
     font-size: large;
 }
 
+/* EVENTS DETAILS VIEW STYLE */
+
+.customer-list h2 {
+    display: inline;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+.button-add {
+    text-decoration: none;
+    background-color: #D88C9A;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.button-add:hover {
+    background-color: #8E7DBE;
+}
+
+.event-view {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.event {
+    padding: 10px;
+}
+
 /* CUSTOMER LISTING STYLE */
 
 table {
@@ -198,7 +257,7 @@ td {
     padding: 15px;
 }
 
-.view-customer {
+.button {
     text-decoration: none;
     background-color: #99C1B9;
     color: white;
@@ -206,7 +265,7 @@ td {
     border-radius: 5px;
 }
 
-.view-customer:hover {
+.button:hover {
     background-color: #8E7DBE;
 
 }

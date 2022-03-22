@@ -17,7 +17,7 @@
                         <th> {{ customer.id }} </th>
                         <td>{{ customer.full_name(customer) }}</td>
                         <td>{{ customer.email }}</td>
-                        <td><a class="view-customer" href="/customers/{{ customer.id }}">Go to Customer</a>
+                        <td><a class="button" href="/customers/{{ customer.id }}">Go to Customer</a>
                         <a class="delete"href="/customers/{{customer.id}}/delete">Delete customer</a>
                     </td>
                     </tr>

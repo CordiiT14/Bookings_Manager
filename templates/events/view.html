@@ -1,26 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
-<div>
-    <h2>Event - {{event.event_title}}</h2>
-    <h3>Event ID - {{event.id}}</h3>
-    <h3>Date:</h3>
-    {{event.date}}
-    <h3>Time:</h3>
-    {{event.time}}
-    <h3>Event Type:</h3>
-    {{event.event_type}}
-    <h3>Event Description:</h3>
-    {{event.description}}
+<div class="event-view">
+    <section class="event">
+        <h2>{{event.event_title}}</h2>
+        <h3>Event ID: {{event.id}}</h3>
+        <h3>Date:</h3>
+        {{event.date}}
+        <h3>Time:</h3>
+        {{event.time}}
+        <h3>Event Type:</h3>
+        {{event.event_type}}
+        <h3>Event Description:</h3>
+        {{event.description}}
+    </section>
+    <div class="action-buttons">
+    <a class="button" href="/events/{{event.id}}/edit">Update details</a>
+    </div>
 </div>
-<a class="button" href="/events/{{event.id}}/edit">Update details</a>
 
 <hr>
-<div>
-    <a class="button" href="/bookings/{{event.id}}">Add Customer to Event</a>
-</div>
-<hr>
-<div>
+<div class="customer-list">
     <h2>Customer List:</h2>
+        <a class="button-add" href="/bookings/{{event.id}}">Add Customer to Event</a>
     <table>
         <thead>
             <tr>
@@ -33,7 +34,7 @@
             <tr>
                 <th>{{customer.full_name(customer)}}</th>
                 <td>{{customer.notes}}</td>
-                <td><a href="/customers/{{customer.id}}">View Customer</a></td>
+                <td><a class="button"href="/customers/{{customer.id}}">View Customer</a></td>
             </tr>
             {% endfor %}
         </tbody>

@@ -15,7 +15,7 @@
 
         </div> 
         <div class="action-buttons"> 
-            <a class="view-customer" href="/customers/{{customer.id}}/edit">Update details</a>
+            <a class="button" href="/customers/{{customer.id}}/edit">Update details</a>
             <a class="delete" href="/customers/{{customer.id}}/delete">Delete customer</a>
         </div>  
     </div>
@@ -37,7 +37,7 @@
                 <td>{{event.event_title}}</td>
                 <td>{{event.date}}</td>
                 <td>{{event.time}}</td>
-                <td><a class="view-customer" href="/events/{{event.id}} ">View Event</a></td>
+                <td><a class="button" href="/events/{{event.id}} ">View Event</a></td>
             </tr>
         {% endfor %}
     </tbody>
