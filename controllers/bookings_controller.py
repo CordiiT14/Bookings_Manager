@@ -23,3 +23,9 @@ def add_booking():
     booking = Booking(event, customer)
     booking_repository.save(booking)
     return redirect(url_for('events.view_event_details', id = event_id))
+
+@bookings_blueprint.route('/bookings')
+def create_new_booking():
+    events = event_repository.select_all()
+    customers = customer_repository.select_all()
+    return render_template('bookings/new.html', title = "New Booking", all_events = events, all_customers= customers)

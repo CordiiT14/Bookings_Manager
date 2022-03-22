@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% block content%}
+
+<div class="booking-container">
+    <form action="/bookings/new" method="post">
+        <label for="event">Event:</label>
+        <select id="event_id" name="event_id">
+            {% for event in all_events %}
+            <option value="{{event.id}}">{{event.event_title}}</option>
+            {% endfor %}
+        </select>
+        <label for="customer">Customer</label>
+        <select id="customer_id" name="customer_id">
+            {% for customer in all_customers %}
+            <option value="{{customer.id}}">{{customer.full_name(customer)}}</option>
+            {% endfor %}
+        </select> 
+        <input class="button" type="submit" value="submit">
+    </form>
+    <section>
+        <a class="button" href="/customers/new">Create New Customer</a>
+        <a class="button" href="/events/new">Create New Event</a>
+        <a class="delete" href="/">Cancel</a>
+    </section>
+</div>
+
+{% endblock %}
