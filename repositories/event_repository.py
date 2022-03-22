@@ -38,6 +38,18 @@ def select_all_active():
         active_events.append(event)
     return active_events
 
+def select_archived():
+    archived_events =[]
+
+    sql = "SELECT * FROM events WHERE archive = True"
+    results = run_sql(sql)
+
+    for row in results:
+        event = Event(row['event_title'], row['date'], row['time'], row['event_type'], row['description'], row['archive'], row['id'] )
+        archived_events.append(event)
+    return archived_events
+
+
 def select(id):
     event = None
 
