@@ -1,4 +1,4 @@
-from flask import render_template, redirect, request
+from flask import render_template, redirect, request, url_for
 from flask import Blueprint
 from models.customer import Customer
 import repositories.customer_repository as customer_repository
@@ -57,4 +57,4 @@ def delete_customer(id):
         customer_repository.delete(id)
         return redirect('/customers')
     else:
-        redirect('/customer/<id>/delete')
+        return redirect(url_for('customers.confirm_delete_customer', id=id))
