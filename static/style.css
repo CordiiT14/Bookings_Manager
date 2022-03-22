@@ -27,8 +27,10 @@ header img {
 }
 
 .side-bar a:hover {
-    color: #8E7DBE;
-    text-shadow: #D88C9A;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    background-color: #D88C9A;
 }
 
 .account {
@@ -204,10 +206,40 @@ td {
     border-radius: 5px;
 }
 
+.view-customer:hover {
+    background-color: #8E7DBE;
+
+}
+
 .delete {
     text-decoration: none;
     background-color: #bd4158;
     color: white;
     padding: 5px;
     border-radius: 5px;
+}
+
+.delete:hover {
+    background-color:#D88C9A;
+
+}
+
+/* CUSTOMER VIEW STYLING */
+
+.customer-details {
+    display:flex;
+    justify-content:space-between;
+}
+
+.action-buttons {
+    padding: 10px;
+    margin: 10px;
+}
+
+.customer {
+    padding: 10px;
+}
+
+.customer h2 {
+    font-size: 20px;
 }

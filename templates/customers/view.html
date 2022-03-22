@@ -1,21 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div>
-    <h2>First Name:</h2>
-        {{ customer.first_name}}
-    <h2>Last Name:</h2>
-        {{ customer.last_name}}
-    <h2>Email:</h2>
-        {{ customer.email }}
-    <h2>Notes:</h2>
-        <p>{{ customer.notes }}</p>
+<div class="customer-details">
+    <div class="customer">
+        <h2>First Name:</h2>
+            {{ customer.first_name}}
+        <h2>Last Name:</h2>
+            {{ customer.last_name}}
+        <h2>Email:</h2>
+            {{ customer.email }}
 
-    
-    <a class="button" href="/customers/{{customer.id}}/edit">Update details</a>
-    <a class="button" href="/customers/{{customer.id}}/delete">Delete customer</a>
-</div>
+        <h2>Notes:</h2>
+            <p>{{ customer.notes }}</p>
 
+        </div> 
+        <div class="action-buttons"> 
+            <a class="view-customer" href="/customers/{{customer.id}}/edit">Update details</a>
+            <a class="delete" href="/customers/{{customer.id}}/delete">Delete customer</a>
+        </div>  
+    </div>
+<hr>
+<h2>Booked events:</h2>
 <table>
     <thead>
         <tr>
@@ -32,7 +37,7 @@
                 <td>{{event.event_title}}</td>
                 <td>{{event.date}}</td>
                 <td>{{event.time}}</td>
-                <td><a href="/events/{{event.id}} ">View Event</a></td>
+                <td><a class="view-customer" href="/events/{{event.id}} ">View Event</a></td>
             </tr>
         {% endfor %}
     </tbody>
