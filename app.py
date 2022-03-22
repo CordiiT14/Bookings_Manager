@@ -14,5 +14,9 @@ app.register_blueprint(bookings_blueprint)
 def home():
     return render_template('index.html', title = "Dashboard")
 
+@app.route('/sitemap')
+def sitemap():
+    return render_template('sitemap.html', title = "Sitemap")
+
 if __name__ == '__main__':
     app.run(debug=True)

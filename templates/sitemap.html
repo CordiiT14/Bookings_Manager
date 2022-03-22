@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Sitemap</h2>
+<ul>
+    <li>
+        <a href="/">Dashboard</a>
+    </li>
+    <li>
+        <a href="/customers">View Customers</a>
+    </li>
+        <ul>
+            <li>
+                <a href="/customers/<id>">Go to customer</a>
+            </li>
+            <ul>
+                <li>
+                    <a href="/customers/<id>/edit">Edit Customer Details</a>
+                </li>
+                <li>
+                    <a href="/customers/<id>/delete"> Delete Customer</a>
+                </li>
+                <li>
+                    <a href="/events/<id>">Booked Events: View Event</a>
+                </li>
+            </ul>
+            <li>
+                <a href="/customers/<id>/delete"> Delete Customer</a>
+            </li>
+        </ul>
+    <li>
+        <a href="/customers/new">Create Customer</a>
+    </li>
+    <li>
+        <a href="/events">View Events</a>
+    </li>
+        <ul>
+            <li>
+                <a href="/events/<id>">See Event</a>
+            </li>
+                <ul>
+                    <li>
+                        <a href="/events/<id>/edit">Update Event Details</a>
+                    </li>
+                    <li>
+                        <a href="/bookings/<id>"> Add Customer to Event</a>
+                    </li>
+                    <li>
+                        <a href="/customer/<id">Customer List: View Customer</a>
+                    </li>
+
+                </ul>
+        </ul>
+
+    <li>
+        <a href="/events/new">Create Event</a>
+    </li>
+    <li>
+        <a href="/bookings">Make a Booking</a>
+    </li>
+        <ul>
+            <li>
+                <a href="/customers/new">Create New Customer</a>
+            </li>
+            <li>
+                <a href="/events/new">Create New Event</a>
+            </li>
+        </ul>
+    <li>
+        <a href="/events/archived">Archived Events</a>
+    </li>
+
+</ul>
+
+{% endblock %}
