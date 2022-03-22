@@ -33,7 +33,11 @@ def select_all_active():
     sql = "SELECT * FROM events WHERE archive = False"
     results = run_sql(sql)
 
-    
+    for row in results:
+        event = Event(row['event_title'], row['date'], row['time'], row['event_type'], row['description'], row['archive'], row['id'] )
+        active_events.append(event)
+    return active_events
+
 def select(id):
     event = None
 
