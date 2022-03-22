@@ -11,9 +11,8 @@
 
 }
 
-header {
-    padding: 15px;
-    color: #F1E3D3;
+header img {
+    margin:0;
 }
 
 .side-bar li {
@@ -55,7 +54,7 @@ header {
     background-color: #F1E3D3;
     margin-left: 200px;
     margin-bottom: 40px;
-    width: 100%;
+    width: 84%;
     min-height: 100%;
     padding: 15px;
     
@@ -78,30 +77,58 @@ footer {
 
 } 
 
-
- .main-site-container {
+.main-site-container {
     font-family: Montserrat, sans-serif;
 }
 
+
+/* HOME/DASHBOARD STYLE */
+
+.home-dashboard {
+    background-color: white;
+    max-width: 900px;
+    height: 500px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 100px;
+
+}
+
+.container-for-selection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.container-for-selection a {
+    background-color: #8E7DBE;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.container-for-selection a:hover {
+    background-color: #99C1B9;
+}
 
 /* EVENTS PAGE STYLES */
 
 .cards {
     display: flex;
     flex-flow: row wrap;
+    justify-content: flex-start;
 }
 
-.card-item {
-    display: flex;
-    flex-wrap: wrap;
 
-}
 
 .event-card {
     background-color: white;
     border-radius: 5px;
     padding: 5px;
-    margin: 10px;
+    margin: 20px;
     max-height: 400px;
     width: 300px
 } 
@@ -146,4 +173,41 @@ footer {
     color: #8E7DBE;
     text-shadow: #F1E3D3;
     font-size: large;
+}
+
+/* CUSTOMER LISTING STYLE */
+
+table {
+    border-collapse: collapse;
+    margin: 10px;
+}
+
+tr {
+    border: 2px solid black;
+}
+
+th {
+    border: 2px solid black;
+    padding: 15px;
+}
+
+td {
+    border: 2px solid black;
+    padding: 15px;
+}
+
+.view-customer {
+    text-decoration: none;
+    background-color: #99C1B9;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.delete {
+    text-decoration: none;
+    background-color: #bd4158;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
 }

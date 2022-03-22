@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Dashboard</h2>
-<p>Welcome to your dashboard. Use the navigation on the side or the options below to get started. </p>
-<div class="container-for-selection">
-    <a href="/customers">View Customers</a>
-    <a href="/customers/new">Create Customer</a>
-    <a href="/events">View Events</a>
-    <a href="/events/new">Create Event</a>
-</div>
+    <div class="home-dashboard">
+        <h2>Dashboard</h2>
+        <p>Welcome to Bookings Manager. Your personlised events booking solution. </p>
+        <p>The navigational side bar is available throughout the site for quick access.</p>
+        <p>Choose from the options below to get started managing your customers and events.</p>
+        <div class="container-for-selection">
+            <a href="/customers">View Customers</a>
+            <a href="/customers/new">Create Customer</a>
+            <a href="/events">View Events</a>
+            <a href="/events/new">Create Event</a>
+        </div>
+    </div>
 {% endblock %}
