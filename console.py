@@ -74,9 +74,19 @@ bookings_repository.save(booking_3)
 #     print(customer.notes)
 #     print(customer.id)
 
-active = event_repository.select_all_active()
+# active = event_repository.select_all_active()
 
-for event in active:
+# for event in active:
+#     print(event.__dict__)
+
+
+event_4.archive_event(event_4)
+
+event_repository.update(event_4)
+
+archived = event_repository.select_archived()
+
+for event in archived:
     print(event.__dict__)
 
 
