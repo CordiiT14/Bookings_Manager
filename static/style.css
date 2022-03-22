@@ -102,6 +102,10 @@ form input {
     margin-left: 15px;
 }
 
+form select {
+    margin-left: 15px;
+}
+
 form textarea {
     margin-left: 15px;
 }
@@ -301,4 +305,19 @@ td {
 
 .customer h2 {
     font-size: 20px;
+}
+
+/* BOOKING STYLES */
+
+.booking-container {
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    max-width: 500px;
+
+}
+
+.booking-container section {
+    display:flex;
+    justify-content: space-between;
 }

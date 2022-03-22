@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
 {% block content %}
-<div>
-    <p>Select from customers to book for {{event.event_title}} on {{event.date}} at {{event.time}}</p>
+<div class="booking-container">
+    <h2>{{event.event_title}} on {{event.date}} at {{event.time}}</h2>
     <form action="/bookings/new" method="post">
         <input type="hidden" id="event_id" name="event_id" value="{{event.id}}">
         <label for="customer"> Select Customer</label>
@@ -10,7 +10,11 @@
             <option value="{{customer.id}}">{{customer.full_name(customer)}}</option>
             {% endfor %}
         </select>
-        <input type="submit" value="Book">
+        <input class="button" type="submit" value="Book">
     </form>
+    <section>
+        <a class="button" href="/customers/new">Create New Customer</a>
+        <a class="delete" href="/events/{{event.id}}">Cancel Booking</a>
+    </section> 
 </div>
 {% endblock %}

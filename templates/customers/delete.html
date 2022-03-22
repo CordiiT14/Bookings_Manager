@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 
-Are you sure you want to delete {{customer.full_name(customer)}}?
-<form action="/customers/{{customer.id}}/delete" method="post">
-    <label>Confirm by typing customer last name</label>
-    <input type="text" id="confirm_delete" name="confirm_delete">
-    <input type="submit">
-</form>
-<a href="/customers/{{customer.id}}"><button>No</button></a>
-
+    <p>Are you sure you want to delete {{customer.full_name(customer)}}?</p>
+    <form action="/customers/{{customer.id}}/delete" method="post">
+        <label><p>Confirm by typing customers last name:</p></label>
+        <input type="text" id="confirm_delete" name="confirm_delete">
+        <input class="button" type="submit">
+    </form>
+    <a class="delete" href="/customers/{{customer.id}}">Cancel</a>
 {% endblock %}
