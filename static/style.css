@@ -21,12 +21,12 @@ header img {
 
 }
 
-.side-bar a {
+.side-bar nav a {
     text-decoration: none;
     color: #F1E3D3;
 }
 
-.side-bar a:hover {
+.side-bar nav a:hover {
     border-radius: 5px;
     margin: 5px;
     padding: 5px;
