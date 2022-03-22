@@ -15,7 +15,7 @@
         </tr>
     </thead>
     <tbody>
-        {% for event in all_bookings %}
+        {% for event in archived_events %}
             <tr>
                 <th>{{event.id}}</th>
                 <td>{{event.event_title}}</td>
@@ -28,7 +28,7 @@
     </tbody>
 </table>
 <hr>
-<form action="/events/archived" method="post">
+<form class="archive-form" action="/events/archived" method="post">
     <label>Archive Event:</label>
     <select id="event_id" name="event_id">
         {% for event in active_events %}
