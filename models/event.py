@@ -8,3 +8,7 @@ class Event:
         self.description = description
         self.archive = archive
         self.id = id 
+
+    def archive_event(self, event):
+        event.archive = True
+        return

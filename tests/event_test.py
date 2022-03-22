@@ -31,3 +31,7 @@ class TestEvent(unittest.TestCase):
 
     def test_event_archive_exists(self):
         self.assertEqual(False, self.event_1.archive)
+
+    def test_event_archived(self):
+        self.event_1.archive_event(self.event_1)
+        self.assertEqual(True, self.event_1.archive)

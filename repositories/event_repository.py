@@ -4,8 +4,8 @@ from models.event import Event
 from models.customer import Customer
 
 def save(event):
-    sql = "INSERT INTO events (event_title, date, time, event_type, description) VALUES (%s, %s, %s, %s, %s) RETURNING id"
-    values = [event.event_title, event.date, event.time, event.event_type, event.description]
+    sql = "INSERT INTO events (event_title, date, time, event_type, archive, description) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
+    values = [event.event_title, event.date, event.time, event.event_type, event.archive, event.description]
     results = run_sql(sql, values)
     id = results[0]['id']
     event.id = id
@@ -23,10 +23,17 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        event = Event(row['event_title'], row['date'], row['time'], row['event_type'], row['description'], row ['id'] )
+        event = Event(row['event_title'], row['date'], row['time'], row['event_type'], row['description'], row['archive'], row['id'] )
         events.append(event)
     return events
 
+def select_all_active():
+    active_events =[]
+
+    sql = "SELECT * FROM events WHERE archive = False"
+    results = run_sql(sql)
+
+    
 def select(id):
     event = None
 
@@ -35,12 +42,12 @@ def select(id):
     results = run_sql(sql, values)[0]
 
     if results is not None:
-        event = Event(results['event_title'], results['date'], results['time'], results['event_type'], results['description'], results['id'])
+        event = Event(results['event_title'], results['date'], results['time'], results['event_type'], results['description'], results['archive'], results['id'])
     return event 
 
 def update(event):
-    sql = "UPDATE events SET (event_title, date, time, event_type, description) = (%s, %s, %s, %s, %s) WHERE id = %s"
-    values = [event.event_title, event.date, event.time, event.event_type, event.description, event.id]
+    sql = "UPDATE events SET (event_title, date, time, event_type, description, archive) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [event.event_title, event.date, event.time, event.event_type, event.description, event.archive, event.id]
     run_sql(sql, values)
 
 def delete(id):

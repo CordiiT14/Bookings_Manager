@@ -8,7 +8,8 @@ CREATE TABLE events (
     date VARCHAR(255),
     time VARCHAR(255),
     event_type VARCHAR(255),
-    description TEXT
+    description TEXT,
+    archive BOOL
 );
 
 CREATE TABLE customers (
