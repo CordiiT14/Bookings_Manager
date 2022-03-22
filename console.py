@@ -80,14 +80,14 @@ bookings_repository.save(booking_3)
 #     print(event.__dict__)
 
 
-event_4.archive_event(event_4)
+# event_4.archive_event(event_4)
 
-event_repository.update(event_4)
+# event_repository.update(event_4)
 
-archived = event_repository.select_archived()
+# archived = event_repository.select_archived()
 
-for event in archived:
-    print(event.__dict__)
+# for event in archived:
+#     print(event.__dict__)
 
 
 # CUSTOMER REPOSITORY TESTING

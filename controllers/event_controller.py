@@ -46,3 +46,17 @@ def update_event(id):
     event = Event(event_title, date, time, event_type, description, id)
     event_repository.update(event)
     return render_template('/events/view.html', title = event.event_title, event = event)
+
+@events_blueprint.route('/events/<id>/archive', methods=['POST'])
+def archive_event(id):
+    event = event_repository.select(id)
+    event.archive_event(event)
+    event_repository.update(event)
+    return redirect('/events/archived')
+
+@events_blueprint.route('/events/archived')
+def all_archived_events():
+    archived = event_repository.select_archived()
+    return render_template('/events/archived.html', title = "Archived Events", archived_events = archived) 
+
+    

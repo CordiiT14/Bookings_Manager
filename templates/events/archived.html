@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Archived Events</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Event ID</th>
+            <th>Event Title</th>
+            <th>Event Date</th>
+            <th>Event Time</th>
+            <th>Event Type</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for event in all_bookings %}
+            <tr>
+                <th>{{event.id}}</th>
+                <td>{{event.event_title}}</td>
+                <td>{{event.date}}</td>
+                <td>{{event.time}}</td>
+                <td>{{event.event_type}}</td>
+                <td>{{event.description}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
