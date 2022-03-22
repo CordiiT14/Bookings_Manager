@@ -22,6 +22,12 @@ event_3 = Event("Guid Crack: Spring Rising", "25 March 2022", "19:30", "Storytel
 event_repository.save(event_3)
 event_4 = Event("Scott Gibson: Rejoice", "26 May 2022", "20:00", "Comedy", "Scott Gibson (Edinburgh Award Winner, Scottish Variety Award Winner, Chortle Nominee), Glasgow’s critically-acclaimed and award-winning son, is touring once again with a brand new hour of darkly comedic storytelling.")
 event_repository.save(event_4)
+event_5 = Event("007 Voices Of Bond", "5 Auguts 2022", "15:40", "Music", "Immerse yourself in the world of James Bond and the legendary voices that have accompanied six decades of the world’s most-famous spy. Features all the hits including Goldfinger, Skyfall, Diamonds Are Forever, Live and Let Die and many more. Brought to you by Maia Elsey and the multi award-winning cast of Night Owl Shows. ")
+event_repository.save(event_5)
+event_6 = Event("Is This a Dagger?", "28 August 2021", "11:30", "Theatre", "By the pricking of my thumb, something wicked this way comes. Andy Cannon returns to the Netherbow stage to tell Shakespeare’s classic, taking audiences on a thousand-year journey from fact to fiction and back again.")
+event_repository.save(event_4)
+event_6.archive_event(event_6)
+event_repository.update(event_6)
 
 customer_1 = Customer("Sabrina", "Morales", "s.morales@emails.uk", "Customer is a wheelchair user")
 customer_repository.save(customer_1)

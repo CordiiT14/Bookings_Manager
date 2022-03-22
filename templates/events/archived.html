@@ -1,6 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<form class="archive-form" action="/events/archived" method="post">
+    <label>Archive Event:</label>
+    <select id="event_id" name="event_id">
+        {% for event in active_events %}
+        <option value="{{event.id}}">{{event.event_title}}</option>
+        {% endfor %}
+    </select>
+    <input class="" type="submit" value="Archive">
+</form>
+
+<hr>
+
 <h2>Archived Events</h2>
 
 <table>
@@ -27,15 +39,7 @@
         {% endfor %}
     </tbody>
 </table>
-<hr>
-<form class="archive-form" action="/events/archived" method="post">
-    <label>Archive Event:</label>
-    <select id="event_id" name="event_id">
-        {% for event in active_events %}
-        <option value="{{event.id}}">{{event.event_title}}</option>
-        {% endfor %}
-    </select>
-    <input class="" type="submit" value="Archive">
-</form>
+
+
 
 {% endblock %}
