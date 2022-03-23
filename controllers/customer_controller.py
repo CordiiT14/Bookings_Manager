@@ -57,4 +57,5 @@ def delete_customer(id):
         customer_repository.delete(id)
         return redirect('/customers')
     else:
+        
         return redirect(url_for('customers.confirm_delete_customer', id=id))
