@@ -16,7 +16,7 @@ A local theatre has asked you to build a piece of software to help them to manag
 #### Extensions
 
 - The app could allow the Theatre to delete customers
-- The app 
+- The app could list all the events customers are booked in for. 
 - The app could allow the Theatre to archive old events, these should be shown in an archive and no longer display in the upcoming events list.
 
 
