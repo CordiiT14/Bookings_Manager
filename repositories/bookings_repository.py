@@ -6,10 +6,6 @@ from models.event import Event
 import repositories.event_repository as event_repository
 import repositories.customer_repository as customer_repository
 
-def delete_all():
-    sql = "DELETE FROM bookings"
-    run_sql(sql)
-    return
 
 def save(booking):
     sql = "INSERT INTO bookings (event_id, customer_id) VALUES (%s, %s) RETURNING id"
@@ -17,6 +13,25 @@ def save(booking):
     results = run_sql(sql, values)
     booking.id = results[0]['id']
     return booking 
+
+
+def update(booking):
+    sql = "UPDATE bookings SET (event_id, customer_id) = (%s, %s) WHERE id = %s"
+    values = [booking.event.id, booking.customer.id, booking.id]
+    run_sql(sql, values)
+
+#used in the console to clear seed data - not in program
+def delete_all():
+    sql = "DELETE FROM bookings"
+    run_sql(sql)
+    return
+
+#Below currently being used. Would use for furture extention to list all bookings.
+def delete(id):
+    sql = "DELETE FROM bookings WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
 
 def select_all():
     bookings = []
@@ -29,29 +44,3 @@ def select_all():
         booking = Booking(event, customer, rows['id'])
         bookings.append(booking)
     return bookings
-
-def customer(booking):
-    sql = "SELECT * FROM customers WHERE id = %s"
-    values = [booking.customer.id]
-    results = run_sql(sql, values)[0]
-    
-    customer = Customer(results['first_name'], results['last_name'], results['email'], results['notes'], results['id'])
-    return customer
-
-
-def event(booking):
-    sql ="SELECT * FROM events WHERE id = %s"
-    values = [booking.event.id]
-    results = run_sql(sql, values)[0]
-    event = Event(results['event_title'], results['date'], results['time'], results['event_type'], results['description'], results['id'])
-    return event
-
-def update(booking):
-    sql = "UPDATE bookings SET (event_id, customer_id) = (%s, %s) WHERE id = %s"
-    values = [booking.event.id, booking.customer.id, booking.id]
-    run_sql(sql, values)
-
-def delete(id):
-    sql = "DELETE FROM bookings WHERE id = %s"
-    values = [id]
-    run_sql(sql, values)

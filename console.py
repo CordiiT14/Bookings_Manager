@@ -51,7 +51,7 @@ bookings_repository.save(booking_3)
 
 
 
-# EVENT REPOSITORY TESTING
+# -------EVENT REPOSITORY TESTING---------
 
 # events = event_repository.select_all()
 
@@ -96,7 +96,8 @@ bookings_repository.save(booking_3)
 #     print(event.__dict__)
 
 
-# CUSTOMER REPOSITORY TESTING
+
+# --------CUSTOMER REPOSITORY TESTING--------------
 
 # print(customer_repository.select(customer_1.id).__dict__)
 # customer_1.notes = None
@@ -117,7 +118,7 @@ bookings_repository.save(booking_3)
 #     print(events.id)
 
 
-# TESTING OF BOOKING REPOSITORY FUNCTIONS
+# --------TESTING OF BOOKING REPOSITORY FUNCTIONS-------
 
 # bookings_repository.delete(booking_1.id)
 

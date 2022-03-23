@@ -9,10 +9,6 @@ def save(customer):
     customer.id = results[0]['id']
     return customer 
 
-def delete_all():
-    sql = "DELETE FROM customers"
-    run_sql(sql)
-    return 
 
 def select_all():
     customers = []
@@ -62,3 +58,9 @@ def list_booked_events(id):
         event = Event(row['event_title'], row['date'], row['time'], row['event_type'], row['description'],row['archive'], row['id'])
         events.append(event)
     return events 
+
+#Only accessed in console to clear seed data.
+def delete_all():
+    sql = "DELETE FROM customers"
+    run_sql(sql)
+    return 
