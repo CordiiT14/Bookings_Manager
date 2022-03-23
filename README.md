@@ -24,7 +24,7 @@ A local theatre has asked you to build a piece of software to help them to manag
 
 - Clone project to your local repository
 - Create database bookings_manager:
-> create db bookings_manager
+> createdb bookings_manager
 - Run the following in your terminal from the root to create database tables:
 > psql -d bookings_manager -f db/bookings_manager.sql
 - Run the console file to populate the tables with seed data:
