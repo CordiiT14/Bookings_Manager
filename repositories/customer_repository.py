@@ -49,6 +49,8 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
+# Extentions 
+
 def list_booked_events(id):
     events = []
 
@@ -57,6 +59,6 @@ def list_booked_events(id):
     results = run_sql(sql, values)
 
     for row in results:
-        event = Event(row['event_title'], row['date'], row['time'], row['event_type'], row['description'], row['id'])
+        event = Event(row['event_title'], row['date'], row['time'], row['event_type'], row['description'],row['archive'], row['id'])
         events.append(event)
     return events 
