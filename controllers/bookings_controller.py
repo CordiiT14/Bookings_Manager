@@ -26,6 +26,6 @@ def add_booking():
 
 @bookings_blueprint.route('/bookings')
 def create_new_booking():
-    events = event_repository.select_all()
+    events = event_repository.select_all_active()
     customers = customer_repository.select_all()
     return render_template('bookings/new.html', title = "New Booking", all_events = events, all_customers= customers)
