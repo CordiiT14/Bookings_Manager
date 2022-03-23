@@ -3,15 +3,15 @@
 <div>
     <form action="/events/new" method="post">
         <label for="event_title">Event Title:</label>
-        <input type="text" id="event_title" name="event_title" value="Event Title" required>
+        <input type="text" id="event_title" name="event_title" placeholder="Event Title" required>
         <label for="date">Date:</label>
-        <input type="text" id="date" name="date" value="Input date as - 01 January 2022" required>
+        <input type="text" id="date" name="date" placeholder="01 January 2022" required>
         <label for="time">Time:</label>
-        <input type="time" id="time" name="time" value="Input time as 24:00 clock" required>
+        <input type="time" id="time" name="time" required>
         <label for="event_type">Event Type:</label>
-        <input type="text" id="event_type" name="event_type" value="Event Type/Genre">
+        <input type="text" id="event_type" name="event_type" placeholder="Event Type/Genre">
         <label for="event_type">Event description:</label>
-        <textarea id="description" name="description" rows="10" cols="40">What is the event about?</textarea>
+        <textarea id="description" name="description" rows="10" cols="40" placeholder="What is the event about?"></textarea>
         <input class="button"type="submit" value="submit">
         
     </form>
