@@ -1,8 +1,7 @@
 # python_project_bookings_manager
 
-##Project Brief
 
-### Theatre
+### Project Brief - Theatre Booking Manager
 
 A local theatre has asked you to build a piece of software to help them to manage customers, and register customers for events.
 
