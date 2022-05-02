@@ -1,6 +1,6 @@
 /* Universal styles */
 
-.side-bar {
+/* .side-bar {
     height: 100%;
     width: 200px;
     position: fixed;
@@ -8,6 +8,13 @@
     top: 0;
     left: 0;
     background-color: #99C1B9 ;
+
+} */
+
+.side-bar {
+    grid-column-start: 1;
+    background-color: #99C1B9 ;
+    height: 100vh;
 
 }
 
@@ -52,24 +59,22 @@ header img {
     color: black;
 }
 
+
 .dashboard-container {
-    background-color: #F1E3D3;
-    margin-left: 200px;
-    margin-bottom: 40px;
-    width: 84%;
-    min-height: 100%;
-    padding: 15px;
+    grid-column-start: 2;
     
 }
 
 body {
     margin: 0;
+    background-color: #F1E3D3;
 }
 
 .footer-container {
     position: fixed;
     background-color: #99C1B9;
     bottom: 0;
+    z-index: -1;
     width: 100%;
     padding: 10px;
 }
@@ -80,6 +85,8 @@ footer {
 } 
 
 .main-site-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
     font-family: Montserrat, sans-serif;
 }
 
@@ -89,6 +96,7 @@ form {
     min-height: 400px;
     width: 400px;
     padding: 20px;
+    margin-left: 15px;
 }
 
 form label {
@@ -281,6 +289,11 @@ td {
     color: white;
     padding: 5px;
     border-radius: 5px;
+    margin: 15px;
+}
+
+input[type='submit']{
+    margin: 10px;
 }
 
 .delete:hover {

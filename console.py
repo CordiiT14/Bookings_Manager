@@ -1,4 +1,4 @@
-from curses import REPORT_MOUSE_POSITION
+
 import pdb
 from models.event import Event
 from models.customer import Customer
