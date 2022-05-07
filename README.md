@@ -20,12 +20,16 @@ The app could allow the Theatre to archive old events, these should be shown in 
 
 ### Programme Set Up
 
-Clone project to your local repository
-Create database bookings_manager:
->createdb bookings_manager
+- Clone project to your local repository
+- Create database bookings_manager:
+> createdb bookings_manager
 
-Run the following in your terminal from the root to create database tables:
->psql -d bookings_manager -f db/bookings_manager.sql
+- Run the following in your terminal from the root to create database tables:
+> psql -d bookings_manager -f db/bookings_manager.sql
 
-Run the console file to populate the tables with seed data:
->python3 console.py
+- Run the console file to populate the tables with seed data:
+> python3 console.py
+
+### App in Action
+
+![screen-gif](./bookingmanager.gif)
